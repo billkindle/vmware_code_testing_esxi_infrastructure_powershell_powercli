@@ -1,0 +1,10 @@
+[The Pester Book](https://leanpub.com/pesterbook) < The book that started it all for me.
+
+[PSKoans](https://github.com/vexx32/PSKoans
+) < Uses Pester to teach PowerShell interactively.
+
+[Infrastructure Testing Using Pester](https://adamtheautomator.com/infrastructure-testing-pester/) < A blog on how I used Pester for infrastructure testing.
+
+[Pester GitHub](https://github.com/pester/Pester) < Code repo
+
+[Official Pester Website](https://pester.dev/)
