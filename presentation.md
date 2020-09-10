@@ -27,7 +27,12 @@ Pester Testing Using PowerShell and PowerCLI
 
 ---
 
+# Prerequisites to Follow Along
 
+- Access to a ESXi host
+- PowerShell 5.1 / 7.0
+- Basic PowerShell / PowerCLI skills
+- Willingness to learn and experiment 
 
 ---
 
@@ -43,7 +48,7 @@ Pester Testing Using PowerShell and PowerCLI
 
 ---
 
-# How can you test ESXi infrastructure?
+# How Can You Test ESXi Infrastructure?
 
 <hr>
 
@@ -65,14 +70,27 @@ Pester Testing Using PowerShell and PowerCLI
 
 ---
 
-# So what can you do with Pester?
+# What Does Pester Do?
 <hr>
 
-- **Test PowerShell code**
-  - Make sure functions **do only what they are supposed to do.**
-- **Test PowerCLI code**
-  - Make sure functions **do only what they are supposed to do.**
-- **Test and validate** physical or virtual IT infrastructure
+- **Test PowerShell / PowerCLI code**
+  - Make sure code **does only what it's supposed to do.**
+
+- **Test and validate** physical or virtual IT infrastructure **is within acceptable parameters.**
+
+---
+
+# How to Get Pester
+
+- Download and save directly from PowerShell Gallery:
+`Save-Module -Name ‘Pester’ -Path ‘.\’Save-Module 'Pester'`
+
+- Install the module directly to your system from PowerShell Gallery:
+`Install-Module -Name ‘Pester’`
+
+- Update the module built-into PowerShell 5.1:
+`Update-Module -Name ‘Pester’`
+
 
 ---
 <!-- _class: lead -->
@@ -134,7 +152,7 @@ VMware users like tags.
 Pester supports the use of tags. What this means is that you don't *have to have* a dozen or more individual test scripts clogging up your repo, but can keep a single test file containing all the Pester tests your heart desires. 
 
 Call certain tags using this syntax:
-`Invoke-Pester -Script .\MySuperDuper.tests.ps1 -Tag 'Network'`
+`Invoke-Pester -Script .\ESXiServices.tests.ps1 -Tag 'Network'`
 
 ---
 
@@ -142,16 +160,16 @@ Call certain tags using this syntax:
 
 ---
 
-# What's needed to run a Pester test?
+# What is Needed to Run a Pester Test?
 
 - The module is already built into Windows PowerShell 5.1 (version 4 / PowerShell Gallery has version 5)
   - Windows 10, Windows Server 2016/2019
-- Basic PowerShell skills
-- Save script as ***.tests.ps1**
+  - Will work under PowerShell 7 too!
+- A test script saved with the extension ***.tests.ps1**
 
 ---
 
-# Running a Pester test
+# Running a Pester Test
 <hr>
 
 - v4 way
@@ -169,10 +187,11 @@ There's only a slight difference between these two, mostly just pass/fail count 
 
 # Demo Time
 
+
 Real world infrastructure testing with Pester
 
 ```PowerShell
-PS:> .\ESXiServices.tests.ps1
+PS:> Invoke-Pester -Path .\ESXiServices.tests.ps1 -Detailed
 ```
 
 ---
@@ -183,13 +202,14 @@ _backgroundColor: black
 _color: white
 -->
 
-# Example checklist for a new ESXi 7 Deployment
+# Example Checklist for a ESXi 7 Deployment
+<hr>
 
   1. NTP Daemon policy is ON.
   2. NTP Daemon is RUNNING.
-  3. NTP Daeomon is NOT REQUIRED.
+  3. NTP Daemon is NOT REQUIRED.
 
-## You can use this simple checklist to build a simple test.
+You can use this simple checklist to build a simple test.
 
 ---
 
@@ -199,7 +219,8 @@ _backgroundColor: black
 _color: white
 -->
 
-# Validation testing using Pester
+# Validation Testing Using Pester
+<hr>
 
 Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
@@ -210,7 +231,7 @@ Describe 'ESXi 7 Host Deployment Checklist Testing' {
 
         It 'NTP Daemon Policy is ON' {
 
-            $ntpd = (Get-VMHostService -VMHost $VMhost | Where-Object -Property Key -EQ 'ntpd')
+            $ntpd = (Get-VMHostService | Where-Object -Property Key -EQ 'ntpd')
 
             $ntpd.Policy | Should -BeExactly 'on'
 
@@ -228,7 +249,8 @@ _backgroundColor: black
 _color: white
 -->
 
-# Validation testing using Pester (Cont.)
+# Validation Testing Using Pester (Cont.)
+<hr>
 
 Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
@@ -236,7 +258,7 @@ Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
         # Example of how you must remember how to assert your expected state to get the right results!
         It 'NTP Daemon Running is FALSE' {
 
-            $ntpd = (Get-VMHostService -VMHost $VMhost | Where-Object -Property Key -EQ 'ntpd')
+            $ntpd = (Get-VMHostService | Where-Object -Property Key -EQ 'ntpd')
 
             $ntpd.Running | Should -BeExactly 'False'
 
@@ -244,7 +266,7 @@ Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
         It 'NTP Daemon Required is FALSE' {
 
-            $ntpd = (Get-VMHostService -VMHost $VMhost | Where-Object -Property Key -EQ 'ntpd')
+            $ntpd = (Get-VMHostService | Where-Object -Property Key -EQ 'ntpd')
 
             $ntpd.Required | Should -BeExactly 'False'
 
@@ -259,6 +281,62 @@ _backgroundColor: black
 _color: white
 -->
 
+# Pester in Action
+<hr>
+
+Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
+
+![w:1200 h:425](https://i.imgur.com/4Yp1qWM.png)
+
 ---
 
+<!--
+_backgroundImage: none
+_backgroundColor: black
+_color: white
+-->
 
+# Pester in Action (Cont.)
+<hr>
+
+## What you saw in the previous slide:
+
+**1.** Pester will search current directory for any *.tests.ps1 files if you do not explicitly name one. The `-Detailed` will show you everything, not just failures.
+**2.** Test begins to run.
+**3.** Failures will show you a full error message.
+**4.** What success looks like.
+**5.** Test completion messages.
+
+---
+
+# Takeaways
+
+- Pester is **not just for code testing.**
+- Tests can be *simple* or *complex*. The choice is yours.
+- Pester **makes use of your existing knowledge** of PowerShell / PowerCLI 
+- Pester **enables you** to test all aspects of your infrastructure systems quickly. From workstations to servers, hypervisors, or network devices, if PowerShell / PowerCLI can reach it, Pester can test it.
+
+---
+
+<!-- _class: lead -->
+
+# Ways to Learn More
+
+---
+
+[The Pester Book](https://leanpub.com/pesterbook) < The book that started it all for me.
+
+[PSKoans](https://github.com/vexx32/PSKoans
+) < Uses Pester to teach PowerShell interactively.
+
+[Infrastructure Testing Using Pester](https://adamtheautomator.com/infrastructure-testing-pester/) < A blog on how I used Pester for infrastructure testing.
+
+[Pester GitHub](https://github.com/pester/Pester) < Code repo
+
+[Official Pester Website](https://pester.dev/)
+
+---
+
+<!-- _class: lead -->
+
+# Happy Testing!
