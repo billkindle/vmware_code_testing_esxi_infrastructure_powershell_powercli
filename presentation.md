@@ -178,7 +178,7 @@ Call certain tags using this syntax:
 - v4 way
   - `Invoke-Pester -Script '[script]' -Tag '[tag]'`
 - v5 way
-  - `invoke-pester -Path .\ESXiServices.tests.ps1 -Output Detailed`
+  - `Invoke-Pester -Path .\ESXiServices.tests.ps1 -Output Detailed`
   or
   - `.\ESXiServices.tests.ps1`
 
