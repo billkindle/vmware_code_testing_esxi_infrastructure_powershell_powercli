@@ -19,11 +19,14 @@ Pester Testing Using PowerShell and PowerCLI
 - Blogger / Author / Editor
   - The PowerShell Conference Book vol. 2-3
   - AdamTheAutomator.com
-- Loves model railroading and trains
+- Likes trains
 - Husband to a loving wife and two tiny humans.
 
-
 ![bg left:40% 80%](https://avatars3.githubusercontent.com/u/7315466?s=460&u=7da1399325c85bdbf61d8ac87babecfd45cd3989&v=4)
+
+---
+
+![bg](https://i.imgur.com/p6j3n1t.jpg)
 
 ---
 
