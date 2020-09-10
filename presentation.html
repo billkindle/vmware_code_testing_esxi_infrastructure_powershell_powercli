@@ -194,19 +194,12 @@ or</li>
 <hr />
 <p>Filename: <font color="yellow"><strong>ESXiServices.tests.ps1</strong></font></p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">Describe</span> <span class="hljs-string">&#x27;ESXi 7 Host Deployment Checklist Testing&#x27;</span> {
-
     <span class="hljs-keyword">Context</span> <span class="hljs-string">&#x27;NTP Tests&#x27;</span> -Tag <span class="hljs-string">&#x27;Services&#x27;</span> {
-
         It <span class="hljs-string">&#x27;NTP Daemon Policy is ON&#x27;</span> {
-
             $ntpd = (<span class="hljs-keyword">Get</span>-VMHostService | <span class="hljs-keyword">Where</span>-<span class="hljs-keyword">Object</span> -Property <span class="hljs-keyword">Key</span> -EQ <span class="hljs-string">&#x27;ntpd&#x27;</span>)
-
             $ntpd.Policy | Should -BeExactly <span class="hljs-string">&#x27;on&#x27;</span>
-
         } <span class="hljs-comment"># End Assertion Block</span>
-
     } <span class="hljs-comment"># End Context Block</span>
-
 } <span class="hljs-comment"># End Describe Block</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
@@ -214,21 +207,14 @@ or</li>
 <h1>Validation Testing Using Pester (Cont.)</h1>
 <hr />
 <p>Filename: <font color="yellow"><strong>ESXiServices.tests.ps1</strong></font></p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>        <span class="hljs-comment"># Example of how you must remember how to assert your expected state to get the right results!</span>
-        It <span class="hljs-string">&#x27;NTP Daemon Running is FALSE&#x27;</span> {
-
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>        It <span class="hljs-string">&#x27;NTP Daemon Running is FALSE&#x27;</span> {
             <span class="hljs-variable">$ntpd</span> = (<span class="hljs-built_in">Get-VMHostService</span> | <span class="hljs-built_in">Where-Object</span> <span class="hljs-literal">-Property</span> Key <span class="hljs-operator">-EQ</span> <span class="hljs-string">&#x27;ntpd&#x27;</span>)
-
             <span class="hljs-variable">$ntpd</span>.Running | Should <span class="hljs-literal">-BeExactly</span> <span class="hljs-string">&#x27;False&#x27;</span>
-
         } <span class="hljs-comment"># End Assertion Block</span>
 
         It <span class="hljs-string">&#x27;NTP Daemon Required is FALSE&#x27;</span> {
-
             <span class="hljs-variable">$ntpd</span> = (<span class="hljs-built_in">Get-VMHostService</span> | <span class="hljs-built_in">Where-Object</span> <span class="hljs-literal">-Property</span> Key <span class="hljs-operator">-EQ</span> <span class="hljs-string">&#x27;ntpd&#x27;</span>)
-
             <span class="hljs-variable">$ntpd</span>.Required | Should <span class="hljs-literal">-BeExactly</span> <span class="hljs-string">&#x27;False&#x27;</span>
-
         } <span class="hljs-comment"># End Assertion Block</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
