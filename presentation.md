@@ -28,6 +28,10 @@ Pester Testing Using PowerShell and PowerCLI
 
 ![bg](https://i.imgur.com/p6j3n1t.jpg)
 
+<!--
+There are two little kids in this photo. My son and I, in the cab of the famous "Nickel Plate Road #765" Berkshire S2 Class steam locomotive built by the Lima Locomotive Works over 76 years ago. This engine is owned and operated by the Fort Wayne, IN historical society. It's an impressive machine and a thing of engineering beauty.
+-->
+
 ---
 
 # Prerequisites to Follow Along
@@ -36,6 +40,10 @@ Pester Testing Using PowerShell and PowerCLI
 - PowerShell 5.1 / 7.0
 - Basic PowerShell / PowerCLI skills
 - Willingness to learn and experiment 
+
+<!--
+You don't have to follow along but I do provide some example code in my github repository.
+-->
 
 ---
 
@@ -343,3 +351,7 @@ _color: white
 <!-- _class: lead -->
 
 # Happy Testing!
+
+Access this presentation and code examples using QR code below:
+
+![Imgur](https://i.imgur.com/so8nGqj.png)
