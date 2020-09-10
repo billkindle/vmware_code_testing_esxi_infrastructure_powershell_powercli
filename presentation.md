@@ -15,7 +15,7 @@ Pester Testing Using PowerShell and PowerCLI
 
 # About Bill Kindle
 
-- Cyber Security Engineer / SysAdmin
+- Cyber Security Engineer / SysAdmin / vExpert 2020
 - Blogger / Author / Editor
   - The PowerShell Conference Book vol. 2-3
   - AdamTheAutomator.com
@@ -57,6 +57,16 @@ You don't have to follow along but I do provide some example code in my github r
 
 ![bg right:40% 80%](https://willlukang.files.wordpress.com/2014/12/play-nicely.jpg)
 
+<!--
+Why testing is important
+
+Humans make mistakes, testing helps to discover these mistakes and enables us to mitigate them.
+
+Mistakes can cost money and time. REPEATING THE SAME MISTAKES is not acceptable. Testing for those past mistakes helps reduce troubleshooting overhead by eliminating known possibilities of past mistakes.
+
+Do the right thing becuase it's the right thing to do. Testing is the right thing.
+-->
+
 ---
 
 # How Can You Test ESXi Infrastructure?
@@ -67,6 +77,10 @@ You don't have to follow along but I do provide some example code in my github r
 
 ![bg right:40% 80%](https://awo.aws.org/wp-content/uploads/2017/03/Computer-Based-Testing-BLOG-IMAGE-3-17.jpg)
 
+<!--
+Pester isnt' just for testing PowerShell / PowerCLI code. You can test infrastructure as well! If PowerShell or PowerCLI can reach it, Pester can test it!
+-->
+
 ---
 
 # What is Pester?
@@ -76,6 +90,10 @@ You don't have to follow along but I do provide some example code in my github r
 - **Domain Specific Language** (DSL) with an easy to understand syntax
 - **Built-in** with **Windows PowerShell**
 - **It's not just for testing code!**
+
+<!--
+Pester provides a framework that validates expected states.
+-->
 
 ![bg right](https://th.bing.com/th/id/OIP.4NYm8r2sSoGIDs_bZv5UzwHaHb?pid=Api&rs=1)
 
@@ -88,6 +106,10 @@ You don't have to follow along but I do provide some example code in my github r
   - Make sure code **does only what it's supposed to do.**
 
 - **Test and validate** physical or virtual IT infrastructure **is within acceptable parameters.**
+
+<!--
+You may need to use the AllowClobber parameter for Install-Module which will install the latest version alongside older versions.
+-->
 
 ---
 
@@ -110,7 +132,7 @@ You don't have to follow along but I do provide some example code in my github r
 
 ---
 
-# Describe Block
+# Describe Block { }
 <hr>
 
 *Describes* top level grouping of tests.
@@ -125,7 +147,7 @@ Examples:
 
 ---
 
-# Context Block
+# Context Block { }
 <hr>
 
 *Context* is the scope within a group of tests.
@@ -140,7 +162,7 @@ Examples:
 
 ---
 
-# Assertion Blocks
+# Assertion Blocks { }
 <hr>
 
 You run a test and **assert** an expected value*. You will see terms such as `It 'test name' {code | ShouldBe -Exactly 'value'}`
@@ -158,7 +180,8 @@ The value is <font color="red">**$False**</font> (Red)
 
 # Tags
 <hr>
-VMware users like tags. 
+
+VMware + Tags = ![w:50 h:50](https://i.imgur.com/hcPHsGp.jpg) 
 
 Pester supports the use of tags. What this means is that you don't *have to have* a dozen or more individual test scripts clogging up your repo, but can keep a single test file containing all the Pester tests your heart desires. 
 
@@ -320,6 +343,22 @@ _color: white
 
 ---
 
+<!--
+_backgroundImage: none
+_backgroundColor: black
+_color: white
+-->
+
+# Recorded Demo (real-time)
+![w:1150 h:500](https://i.imgur.com/yR4urPg.gif)
+
+<!--
+I recorded this in real time to show just how fast you can complete a suite of tests with Pester. 
+
+In Milliseconds. YMMV though depending on how efficient your code is at returning information.
+-->
+---
+
 # Takeaways
 
 - Pester is **not just for code testing.**
@@ -346,6 +385,10 @@ _color: white
 
 [Official Pester Website](https://pester.dev/)
 
+<!--
+Reminder to recommend supporting the Pester Developers through GitHub.
+-->
+
 ---
 
 <!-- _class: lead -->
@@ -355,3 +398,7 @@ _color: white
 Access this presentation and code examples using QR code below:
 
 ![Imgur](https://i.imgur.com/so8nGqj.png)
+
+<!--
+Special thanks to you, the viewer and to the team at VMware Code{} Connect for all the help in making this first time presentation at a major online conference possible for this first time vExpert!
+-->
