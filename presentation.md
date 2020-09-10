@@ -139,11 +139,11 @@ You run a test and **assert** an expected value*. You will see terms such as `It
 
 This is where you use PowerShell / PowerCLI code to build a simple test that will return a value.
 
-The value is <font color="green">**$True**</font>
+The value is <font color="green">**$True**</font> (Green)
 
 or
 
-The value is <font color="red">**$False**</font>
+The value is <font color="red">**$False**</font> (Red)
 
 
 ---
