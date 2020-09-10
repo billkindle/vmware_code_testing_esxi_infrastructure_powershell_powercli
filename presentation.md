@@ -41,7 +41,7 @@ Pester Testing Using PowerShell and PowerCLI
 
 - **Reduces human error**
 - Saves *money* & *time*
-  - Less configuration 
+  - Reduces troubleshooting overhead 
 - It's the right thing to do!
 
 ![bg right:40% 80%](https://willlukang.files.wordpress.com/2014/12/play-nicely.jpg)
