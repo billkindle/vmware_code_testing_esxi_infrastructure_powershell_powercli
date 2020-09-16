@@ -48,7 +48,6 @@ You don't have to follow along but I do provide some example code in my github r
 ---
 
 # Why Testing Your Infrastructure is Important
-<hr>
 
 - **Reduces human error**
 - Saves *money* & *time*
@@ -71,8 +70,6 @@ Do the right thing becuase it's the right thing to do. Testing is the right thin
 
 # How Can You Test ESXi Infrastructure?
 
-<hr>
-
 - By using a built-in Windows PowerShell module called **Pester** with PowerCLI
 
 ![bg right:40% 80%](https://awo.aws.org/wp-content/uploads/2017/03/Computer-Based-Testing-BLOG-IMAGE-3-17.jpg)
@@ -84,7 +81,6 @@ Pester isnt' just for testing PowerShell / PowerCLI code. You can test infrastru
 ---
 
 # What is Pester?
-<hr>
 
 - Pester is the **ubiquitous testing framework for PowerShell**
 - **Domain Specific Language** (DSL) with an easy to understand syntax
@@ -100,7 +96,6 @@ Pester provides a framework that validates expected states.
 ---
 
 # What Does Pester Do?
-<hr>
 
 - **Test PowerShell / PowerCLI code**
   - Make sure code **does only what it's supposed to do.**
@@ -133,7 +128,6 @@ You may need to use the AllowClobber parameter for Install-Module which will ins
 ---
 
 # Describe Block { }
-<hr>
 
 *Describes* top level grouping of tests.
 
@@ -148,7 +142,6 @@ Examples:
 ---
 
 # Context Block { }
-<hr>
 
 *Context* is the scope within a group of tests.
 
@@ -163,7 +156,6 @@ Examples:
 ---
 
 # Assertion Blocks { }
-<hr>
 
 You run a test and **assert** an expected value*. You will see terms such as `It 'test name' {code | ShouldBe -Exactly 'value'}`
 
@@ -179,7 +171,6 @@ The value is <font color="red">**$False**</font> (Red)
 ---
 
 # Tags
-<hr>
 
 VMware + Tags = ![w:50 h:50](https://i.imgur.com/hcPHsGp.jpg) 
 
@@ -204,7 +195,6 @@ Call certain tags using this syntax:
 ---
 
 # Running a Pester Test
-<hr>
 
 - v4 way
   - `Invoke-Pester -Script '[script]' -Tag '[tag]'`
@@ -237,7 +227,6 @@ _color: white
 -->
 
 # Example Checklist for a ESXi 7 Deployment
-<hr>
 
   1. NTP Daemon policy is ON.
   2. NTP Daemon is RUNNING.
@@ -254,7 +243,6 @@ _color: white
 -->
 
 # Validation Testing Using Pester
-<hr>
 
 Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
@@ -277,7 +265,6 @@ _color: white
 -->
 
 # Validation Testing Using Pester (Cont.)
-<hr>
 
 Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
@@ -302,7 +289,6 @@ _color: white
 -->
 
 # Pester in Action
-<hr>
 
 Filename: <font color="yellow">**ESXiServices.tests.ps1**</font>
 
@@ -317,7 +303,6 @@ _color: white
 -->
 
 # Pester in Action (Cont.)
-<hr>
 
 ## What you saw in the previous slide:
 
